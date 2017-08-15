@@ -1,0 +1,70 @@
+body,html{
+    font-size: 75px;
+}
+header{
+	height: 0.6rem;
+	background-color: #fff;
+	position: relative;
+}
+header a{
+	margin-top: 0.1rem;
+	margin-left: 0.1rem;
+	position: absolute;
+	z-index: 2;
+}
+.mui-title{
+	font-size: 19px;
+	line-height: 0.6rem;
+}
+.search-mod {
+	text-align: center;
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+	margin-top: 0.4rem;
+}
+.search-mod input{
+	width: 80%;
+	height: 0.47rem;
+	outline: none;
+	border: 0;
+	font-size: 0.2rem;
+	vertical-align: top;
+}
+.search-mod button.search-btn{
+	height: 0.47rem;
+	width: 17%;
+	outline: none;
+	border: 0;
+	font-size: 0.2rem;
+	margin-left: -12px;
+	background-color: #6641E2;
+	color: #fff;
+}
+.mui-icon{
+	font-size: 20px;
+}
+.search-mod{
+	
+	height: 0.5rem;
+}
+ul{
+	list-style: none;
+	font-size: 0.2rem;
+	color: #FF5053;
+	background-color: #fff;
+	margin: 0.4rem 0.4rem;
+	padding: 0.266666rem 0;
+	margin-top: 0;
+	width: 67%;
+	
+	
+}
+
+ul .mui-icon{
+	font-size: 0.2rem;
+}
+ul li{
+	padding: 0.1rem 0;
+	border-bottom: 1px solid #C0C0C0;
+	text-indent: 0.266666rem;
+}

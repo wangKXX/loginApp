@@ -1,0 +1,83 @@
+body,html{
+    font-size: 75px;
+}
+.mui-content-padded{
+    width: 6.666666rem;
+}
+footer{
+    width: 100%;
+    height: 0.8rem;
+    background-color: #fff;
+    position: fixed;
+    bottom:0 ;
+    z-index:3;
+}
+
+.find-btn{
+    margin-top: 0.6rem;
+}
+.mui-row{
+    text-align: center;
+}
+.search-input{
+	padding-left: 0.48rem;
+	margin-left: 0.48rem;
+}
+.man{
+	
+	margin-left: 0.133333rem ;
+	margin-top: 0.133333rem;
+	
+}
+.mui-scroll ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 0.2rem;
+	margin-top: 0.266666rem;
+	
+}
+.mui-scroll ul li{
+	font-size: 14px;
+	margin: 0.133333rem 0;
+}
+.mui-scroll ul li:hover{
+	background-color: #8F8F94;
+}
+.aside-header{
+	width: 100%;
+	height: 2.666666rem;
+	background-color: #fff;
+}
+#login{
+	font-size: 14px;
+	color: #007AFF;
+	margin-left: 0.266666rem;
+	
+}
+.mui-bar .mui-btn-link{
+	line-height: 21px;
+}
+.mui-card{
+	font-size: 14px;
+	margin-top: 0.4rem;
+	
+	
+}
+.mui-card img{
+	width: 100%;
+}
+.mui-scroll-wrapper{
+	overflow: auto;
+}
+.mui-card-header{
+	font-size: 24px;
+	padding: 0.133333rem 0;
+	padding-left: 0.133333rem;
+}
+.mui-card-footer{
+	text-align: right;
+	color: #8F8F94;
+	padding-bottom: 0.133333rem;
+	padding-right: 0.133333rem;
+}

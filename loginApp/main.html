@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/main.css" />
+		<style>
+			ul {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+			
+			.mui-btn {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<aside class="mui-off-canvas-left" id="aside">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div class="aside-header">
+								<span class="mui-icon mui-icon-contact man" id="touxiang"></span><span id="login">请点击登录</span>
+							</div>
+							<ul>
+								<li><span class="mui-icon mui-icon-email"></span>消息</li>
+								<li><span class="mui-icon mui-icon-location"></span>我的位置</li>
+								<li><span class="mui-icon mui-icon-star"></span>我的收藏</li>
+								<li><span class="mui-icon mui-icon-trash"></span>删除</li>
+								<li id="sz"><span class="mui-icon mui-icon-gear" ></span>设置</li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<h1 class="mui-title">标题</h1>
+					<button id='setting' class=" mui-pull-right mui-btn-link mui-icon mui-icon-search"></button>
+				</header>
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<div class="mui-slider">
+							<div class="mui-slider-group">
+								<div class="mui-slider-item">
+									<a href="#"><img src="images/ry-hd.png" /></a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#"><img src="images/ry-ht.png" /></a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#"><img src="images/ry-kp.png" /></a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#"><img src="images/ry-ly.png" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="mui-card">
+							<!--页眉，放置标题-->
+							<div class="mui-card-header">自由理财师</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<img src="images/guide.png"/>
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">上线日期：2017-07-01</div>
+						</div>
+						<div class="mui-card">
+							<!--页眉，放置标题-->
+							<div class="mui-card-header">自由理财师</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<img src="images/guide.png"/>
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">上线日期：2017-07-01</div>
+						</div>
+						
+					</div>
+				</div>
+				<footer>
+
+				</footer>
+			</div>
+			
+		</div>
+			<script src="js/mui.min.js"></script>
+			<script src="js/app.js"></script>
+			<script>
+				(function($, doc) {
+					$.init({
+						swipeBack: false;
+					});
+					var settings = app.getSettings();
+					var account = doc.getElementById('account');
+					//
+					window.addEventListener('show', function() {
+						var state = app.getState();
+						account.innerText = state.account;
+					}, false);
+					$.plusReady(function() {
+						var settingPage = $.preload({
+							"id": 'setting',
+							"url": 'setting.html'
+						});
+						//设置
+						var settingButton = doc.getElementById('setting');
+						//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+						settingButton.addEventListener('tap', function(event) {
+							$.openWindow({
+								id: 'setting',
+								show: {
+									aniShow: 'pop-in'
+								},
+								styles: {
+									popGesture: 'hide'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						});
+						//--
+						$.oldBack = mui.back;
+						var backButtonPress = 0;
+						$.back = function(event) {
+							backButtonPress++;
+							if(backButtonPress > 1) {
+								plus.runtime.quit();
+							} else {
+								plus.nativeUI.toast('再按一次退出应用');
+							}
+							setTimeout(function() {
+								backButtonPress = 0;
+							}, 1000);
+							return false;
+						};
+						
+					});
+					var gallery = $('.mui-slider');
+					gallery.slider({
+					  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；
+					});
+					document.addEventListener("swiperight",function(event){
+						var menu = document.getElementById("aside");
+						
+						
+					});
+					document.getElementById('login').addEventListener("tap", function(event){
+						$.openWindow({
+							url:"login.html",
+							show: {
+								aniShow: 'pop-in',
+								duration:3000,
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+						})
+					});
+					document.getElementById('setting').addEventListener("tap",function(event){
+						$.openWindow({
+							url:"search.html",
+						})
+					})
+					document.getElementById('sz').addEventListener("tap",function(event){
+						$.openWindow({
+							url:"setting.html"
+						})
+						
+					
+					}) 
+					document.getElementById('sz').addEventListener("tap",function(e){
+						var cmr = plus.camera.getCamera(); )
+			          	 cmr.captureImage(function(p) {    
+			               plus.io.resolveLocalFileSystemURL(p, function(entry) {    
+			                   compressImage(entry.toLocalURL(),entry.name);    
+			               }, function(e) {    
+			                   plus.nativeUI.toast("读取拍照文件错误：" + e.message);    
+			               });    
+			           }, function(e) {    
+			           }, {    
+			               filter: 'image'   
+			           });    
+					})
+				}(mui, document));
+			</script>
+	</body>
+</html>
